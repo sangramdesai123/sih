@@ -6,15 +6,15 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('home.html')  # render a template
+    return render_template('home.html')  # render a home template
 
 @app.route('/history')
-def home():
-    return render_template('history.html')  # render a template
+def history():
+    return render_template('history.html')  # render a history template
 
 @app.route('/report')
-def home():
-    return render_template('report.html')  # render a template
+def report():
+    return render_template('report.html')  # render a  report template
 
 # start the server with the 'run()' method
 if __name__ == '__main__':
