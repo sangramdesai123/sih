@@ -8,6 +8,79 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+	<style type="text/css">
+	  	.mybtn{
+	  		background-color: #00AAD3;
+	  		color: white;
+	  		padding: 5px;
+	  		border-radius: 30px;
+	  		width: 150px;
+	  		height: 40px;
+	  		box-shadow: 0 2px #999;
+	  	}
+	  	.mybtn:hover{
+	  		color: white;
+	  		box-shadow: 0 6px #999;
+	  	}
+	  	.mysidebar{
+	  		background-color: #323B3C;
+	  		border-radius: 5px;
+	  		padding: 15px;
+	  		color: white;
+	  	}
+	  	.mysidebox{
+	  		background: #4F5A5B;
+	  		padding: 20px;
+			box-sizing: border-box;
+			margin-bottom: 10px;
+			border-radius: 20px;
+	  	}
+	</style>
+	<style type="text/css">
+		/**THE SAME CSS IS USED IN ALL 3 DEMOS**/    
+		/**gallery margins**/  
+		ul.gallery{    
+		margin-left: 3vw;     
+		margin-right:3vw;  
+		}    
+
+		.zoom {      
+		-webkit-transition: all 0.35s ease-in-out;    
+		-moz-transition: all 0.35s ease-in-out;    
+		transition: all 0.35s ease-in-out;     
+		cursor: -webkit-zoom-in;      
+		cursor: -moz-zoom-in;      
+		cursor: zoom-in;  
+		}     
+
+		.zoom:hover,  
+		.zoom:active,   
+		.zoom:focus {
+		/**adjust scale to desired size, 
+		add browser prefixes**/
+		-ms-transform: scale(2.5);    
+		-moz-transform: scale(2.5);  
+		-webkit-transform: scale(2.5);  
+		-o-transform: scale(2.5);  
+		transform: scale(2.5);    
+		position:relative;      
+		z-index:100;  
+		}
+
+		/**To keep upscaled images visible on mobile, 
+		increase left & right margins a bit**/  
+		@media only screen and (max-width: 768px) {   
+		ul.gallery {      
+		margin-left: 15vw;       
+		margin-right: 15vw;
+		}
+
+		/**TIP: Easy escape for touch screens,
+		give gallery's parent container a cursor: pointer.**/
+		.DivName {cursor: pointer}
+		}
+	</style>
+
 </head>
 <body>
 	<header>
@@ -29,8 +102,81 @@
 	</header>
 
 	<div class="container">
-		//add your code here
-	</div>
+
+      <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-12 col-md-9">
+         
+          <div class="jumbotron text-center">
+          	
+			<h3>Output Images</h3>
+			<ul class="list-inline gallery">    
+			<li><img class="thumbnail zoom" src="https://placeimg.com/110/110/abstract/1"></li>    
+			<li><img class="thumbnail zoom" src="https://placeimg.com/110/110/abstract/2"></li>
+			<br>    
+			<li><img class="thumbnail zoom" src="https://placeimg.com/110/110/abstract/3"></li>    
+			<li><img class="thumbnail zoom" src="https://placeimg.com/110/110/abstract/4"></li>  
+			</ul>
+            
+          </div>
+ 
+        </div><!--/span-->
+
+
+
+        <div class="col-6 col-md-3 sidebar-offcanvas mysidebar text-center" id="sidebar">
+          
+          <div class="mysidebox">
+          	<label>Fill This Details</label>
+          	<hr>
+        	<p>
+        		<!-- Default input -->
+				<label for="location">Location</label>
+				<input type="text" id="location" class="form-control">
+        	</p>
+        	<p>
+        		<!-- Default input -->
+				<label for="Date">Date</label>
+				<input type="text" id="date" class="form-control">
+        	</p>
+        	<p>
+        		<!-- Default input -->
+				<label for="author">Author</label>
+				<input type="text" id="author" class="form-control">
+        	</p>
+          </div>
+          <div class="mysidebox text-left">
+        	<label>We are detection following things</label>
+        	<hr>
+        	<div class="custom-control custom-checkbox">
+			  <input type="checkbox" class="custom-control-input" checked disabled>
+			  <label class="custom-control-label" for="defaultCheckedDisabled2">Pothole</label>
+			</div>
+			<div class="custom-control custom-checkbox">
+			  <input type="checkbox" class="custom-control-input" checked disabled>
+			  <label class="custom-control-label" for="defaultCheckedDisabled2">Linear Cracking</label>
+			</div>
+			<div class="custom-control custom-checkbox">
+			  <input type="checkbox" class="custom-control-input" checked disabled>
+			  <label class="custom-control-label" for="defaultCheckedDisabled2">Alligator Cracking</label>
+			</div>
+			<div class="custom-control custom-checkbox">
+			  <input type="checkbox" class="custom-control-input" checked disabled>
+			  <label class="custom-control-label" for="defaultCheckedDisabled2">Block Cracking</label>
+			</div>
+			<div class="custom-control custom-checkbox">
+			  <input type="checkbox" class="custom-control-input" checked disabled>
+			  <label class="custom-control-label" for="defaultCheckedDisabled2">Edge Cracking</label>
+			</div>
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+   	
+
+    </div><!--/.container-->
 
 </body>
 </html>
