@@ -74,11 +74,17 @@
           	<p>
           		<label for="file" style="cursor: pointer;">Click Here Upload Image</label>
           	</p>
-          	<input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
+          	
           	<img id="output" width="500px" height="400px" />
           	<br><br>	
           	<p>
-          		<button class="btn mybtn" >Upload</button>
+              <form action="https://8888-c767d66e-ad80-47c3-9ae8-0d2f53397b37.ws-ap01.gitpod.io/" method=post enctype=multipart/form-data>
+                <p>
+                  <input type="file"  accept="image/*" name="road_image" id="file"  onchange="loadFile(event)" style="display: none;">
+                <input type="text" name="uid" value="sangram" style="display: none;"><br>
+                <button class="btn mybtn" type="submit" value="Upload">Upload</button>  
+              </form>
+          		
           	</p>
 
           </div>

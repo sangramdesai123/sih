@@ -1,7 +1,11 @@
 # import the Flask class from the flask module
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
 import pyrebase
 from config import *
+import requests
+import os
+from werkzeug import secure_filename
+
 # create the application object
 app = Flask(__name__)
 
@@ -26,6 +30,15 @@ def history():
 def report():
 	
 	return render_template('report.html')
+
+
+@app.route('/upload', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        return redirect(url_for('uploaded_file', filename=filename))
 
 
 #db.child("roadlyser").push({"author":"gole"})
