@@ -1,3 +1,7 @@
 body{
-	
+	margin: 0px;
+	padding: 5px;
+}
+.mynav{
+	background-color: black;
 }

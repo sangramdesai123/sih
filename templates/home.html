@@ -1,9 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Home</title>
+  <title>Home Page</title>
+  <meta charset="utf-8">
+  
+
+  <!--bootstrap -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+  	.selectednav{
+  		background-color: blue;
+  	}
+  </style>
+
+
 </head>
 <body>
-this is home page
+
+<header>
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="http://127.0.0.1:5000/">PotHole</a>
+	    </div>
+	    <ul class="nav navbar-nav navbar-right">
+	      <li class="active "><a href="#">Home</a></li>
+	      
+	      <li><a href="http://127.0.0.1:5000/report">Report</a></li>
+	    
+	      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+	      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	    </ul>
+	  </div>
+	</nav>
+</header>
+  
+
+    <div class="container">
+
+      <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-12 col-md-9">
+         
+          <div class="jumbotron">
+            
+          </div>
+          <div class="row">
+            
+          </div><!--/row-->
+        </div><!--/span-->
+
+        <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
+          <div class="jumbotron">
+            
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+   	
+
+    </div><!--/.container-->
+
 </body>
 </html>
