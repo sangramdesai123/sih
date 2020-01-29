@@ -12,8 +12,18 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
   <style type="text/css">
-  	.selectednav{
-  		background-color: blue;
+  	.mybtn{
+  		background-color: #00AAD3;
+  		color: white;
+  		padding: 5px;
+  		border-radius: 30px;
+  		width: 150px;
+  		height: 40px;
+  		box-shadow: 0 2px #999;
+  	}
+  	.mybtn:hover{
+  		color: white;
+  		box-shadow: 0 6px #999;
   	}
   </style>
 
@@ -21,23 +31,23 @@
 </head>
 <body>
 
-<header>
-	<nav class="navbar navbar-inverse">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <a class="navbar-brand" href="http://127.0.0.1:5000/">PotHole</a>
-	    </div>
-	    <ul class="nav navbar-nav navbar-right">
-	      <li class="active "><a href="#">Home</a></li>
-	      
-	      <li><a href="http://127.0.0.1:5000/report">Report</a></li>
-	    
-	      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-	      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-	    </ul>
-	  </div>
-	</nav>
-</header>
+	<header>
+		<nav class="navbar navbar-inverse">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="http://127.0.0.1:5000/">PotHole</a>
+		    </div>
+		    <ul class="nav navbar-nav navbar-right">
+		      <li class="active "><a href="#">Home</a></li>
+		      
+		      <li><a href="http://127.0.0.1:5000/report">Report</a></li>
+		    
+		      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+		      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		    </ul>
+		  </div>
+		</nav>
+	</header>
   
 
     <div class="container">
@@ -46,12 +56,20 @@
 
         <div class="col-12 col-md-9">
          
-          <div class="jumbotron">
+          <div class="jumbotron text-center">
             
+          	<p>
+          		<label for="file" style="cursor: pointer;">Click Here Upload Image</label>
+          	</p>
+          	<input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
+          	<img id="output" width="500px" height="400px" />
+          	<br><br>	
+          	<p>
+          		<button class="btn mybtn" >Upload</button>
+          	</p>
           </div>
-          <div class="row">
-            
-          </div><!--/row-->
+
+          
         </div><!--/span-->
 
         <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
@@ -67,5 +85,13 @@
 
     </div><!--/.container-->
 
+
+<!-- load the image-->
+    <script>
+		var loadFile = function(event) {
+			var image = document.getElementById('output');
+			image.src = URL.createObjectURL(event.target.files[0]);
+		};
+	</script>
 </body>
 </html>
