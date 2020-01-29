@@ -635,6 +635,9 @@
 				<a href="http://127.0.0.1:5000/report">
 					<div class="row sideBar">
 
+
+              {% for newdata in values %}
+
 			          <div class="row sideBar-body" style="height: 100px;" type="button">
 			            <div class="col-md-3 sideBar-avatar">
 			              <div class="avatar-icon">
@@ -642,25 +645,25 @@
 			              </div>
 			            </div>
 			            <div class="col-md-9 sideBar-main">
-			              <table class="table table-bordered">
-						      <tr>
-						        <th>Author:</th>
-						        <td>_______</td>
-						        <th>Location:</th>
-						        <td>_______</td>
-						      </tr>
-						      <tr>
-						        <th>Date:</th>
-						        <td>_______</td>
-						        <th>PCI:</th>
-						        <td>_______</td>
-						      </tr>
-						  </table>
+      			        <table class="table table-bordered">
+      						      <tr>
+      						        <th>Author:</th>
+      						        <td>{{newdata[0]}}</td>
+      						        <th>Location:</th>
+      						        <td>{{newdata[3]}}</td>
+      						      </tr>
+      						      <tr>
+      						        <th>Date:</th>
+      						        <td>{{newdata[2]}}</td>
+      						        <th>PCI:</th>
+      						        <td>{{newdata[4]}}</td>
+      						      </tr>
+      						  </table>
 			              
 			            </div>
 			          </div>
 
-			          
+			        {% endfor %}
 			        </div>
 				</a>
 		        
