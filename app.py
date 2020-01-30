@@ -16,6 +16,10 @@ db = firebase.database()
 def home():
     return render_template('home.html')  # render a home template
 
+@app.route('/goog')
+def goog():
+	return render_template('goog.html')
+
 @app.route('/history')
 def history():
 	values = list(db.get().val().values())

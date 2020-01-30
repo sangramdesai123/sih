@@ -9,7 +9,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-signin-scope" content="profile email">
   <meta name="google-signin-client_id" content="369256255161-ho322qaur93fcr5007a7nhnisat2p1gu.apps.googleusercontent.com">
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -41,6 +40,7 @@
         });
       }
     </script>
+
   <style type="text/css">
   	.mybtn{
   		background-color: #00AAD3;
@@ -78,15 +78,19 @@
 		<nav class="navbar navbar-inverse">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
-		      <a class="navbar-brand" href="http://127.0.0.1:5000/">PotHole</a>
+		      <a class="navbar-brand" href="http://127.0.0.1:5000/">Roadlyser</a>
 		    </div>
 		    <ul class="nav navbar-nav navbar-right">
 		      <li class="active "><a href="#">Home</a></li>
 		      <li><a href="http://127.0.0.1:5000/history">History</a></li>
 		      <li><a href="http://127.0.0.1:5000/report">Report</a></li>
-		    
-		      <li><div class="g-signin2" id="signin" data-onsuccess="onSignIn" style="padding-top:7px; padding-right:5px"></div></li>
-		      <li><a href="#" id="signout" onClick="signOut()" style="display:none">Sign Out</a></li>
+              
+              <li><div class="g-signin2" id="signin" data-onsuccess="onSignIn" style="padding-top:7px; padding-right:5px"></div></li>
+              <!-- <li><div class="g-signin2" id="signout" data-name="SignOut" onClick="signOut()" style="padding-top:7px; padding-right:5px;display:none"></div></li> -->
+              <li><a href="#" id="signout" onClick="signOut()" style="display:none">Sign Out</a></li>
+<!--
+		      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+		      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
 		    </ul>
 		  </div>
 		</nav>
@@ -104,17 +108,11 @@
           	<p>
           		<label for="file" style="cursor: pointer;">Click Here Upload Image</label>
           	</p>
-          	
+          	<input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
           	<img id="output" width="500px" height="400px" />
           	<br><br>	
           	<p>
-              <form action="https://8888-c767d66e-ad80-47c3-9ae8-0d2f53397b37.ws-ap01.gitpod.io/" method=post enctype=multipart/form-data>
-                <p>
-                  <input type="file"  accept="image/*" name="road_image" id="file"  onchange="loadFile(event)" style="display: none;">
-                <input type="text" name="uid" value="sangram" style="display: none;"><br>
-                <button class="btn mybtn" type="submit" value="Upload">Upload</button>  
-              </form>
-          		
+          		<button class="btn mybtn" >Upload</button>
           	</p>
 
           </div>
